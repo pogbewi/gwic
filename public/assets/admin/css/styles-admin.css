@@ -1,0 +1,109 @@
+/*html,
+body,
+header,
+.view {
+    height: 100%;
+}
+
+@media (max-width: 740px) {
+    html,
+    body,
+    header,
+    .view {
+        height: 1000px;
+    }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+    html,
+    body,
+    header,
+    .view {
+        height: 650px;
+    }
+}*/
+
+/*.top-nav-collapse {
+    background-color: #3f51b5 !important;
+}*/
+
+/*.navbar:not(.top-nav-collapse) {
+    background: transparent !important;
+}*/
+
+@media (max-width: 991px) {
+    .navbar:not(.top-nav-collapse) {
+        background: #3f51b5 !important;
+    }
+}
+
+.rgba-gradient {
+    background: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
+    background: -webkit-gradient(linear, 45deg, from(rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%)));
+    background: linear-gradient(to 45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
+}
+
+.login .card {
+    background-color: rgba(126, 123, 215, 0.2);
+}
+
+.md-form label {
+    color: #ffffff;
+}
+
+h6 {
+    line-height: 1.7;
+}
+
+body {
+    background-color: #eee;
+}
+
+.navbar p{
+    margin-bottom: 0 !important;
+}
+
+.side-nav .logo-sn {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.side-nav .logo-sn img {
+    height: 38px;
+}
+
+.side-nav .search-form input[type=text] {
+    margin-top: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.accordion .card {
+    margin-bottom: 1.2rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.accordion .card .card-body {
+    border-top: 1px solid #eee;
+}
+
+code{
+    word-break: break-word;
+    background-color: #f9f2f4;
+    font-size: 90%;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.table td, .table th{
+    padding: .4rem !important;
+}
+
+table.table .btn{
+    padding: .42rem 2.14rem !important;
+}
+
+.bootstrap-tagsinput .tag {
+    background: #961910;
+}
+
+

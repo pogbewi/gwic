@@ -85,20 +85,20 @@
                                     <div class="form-row">
                                         <!-- Default input -->
                                         <div class="form-group col-md-2">
-                                            <label for="title">Title</label>
-                                            <input type="text" name="title" class="form-control" id="title" placeholder="Title">
-                                            <span class="help-block title"></span>
+                                            <label for="title" data-error="wrong" data-success="right">Title</label>
+                                            <input type="text" name="title" class="form-control validate" id="title" placeholder="Title">
+                                            <span class="help-block title" data-error="wrong" data-success="right"></span>
                                         </div>
                                         <!-- Default input -->
                                         <div class="form-group col-md-5">
-                                            <label for="firstname">First Name</label>
-                                            <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First Name">
+                                            <label for="firstname" data-error="wrong" data-success="right">First Name</label>
+                                            <input type="text" name="firstname" class="form-control validate" id="firstname" placeholder="First Name">
                                             <span class="help-block firstname"></span>
                                         </div>
 
                                         <div class="form-group col-md-5">
-                                            <label for="lastname">Last Name</label>
-                                            <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Last Name">
+                                            <label for="lastname" data-error="wrong" data-success="right">Last Name</label>
+                                            <input type="text" name="lastname" class="form-control validate" id="lastname" placeholder="Last Name">
                                             <span class="help-block lastname"></span>
                                         </div>
                                     </div>

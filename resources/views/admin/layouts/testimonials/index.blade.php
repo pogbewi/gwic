@@ -85,18 +85,25 @@
                                                 <label for="checkbox{{$testimonial->id}}" class="label-table form-check-label"></label>
                                             </td>
                                             <td class="col-md-4">
-                                                <img src="{{ asset('storage/uploads/testimonies/images/thumbnails/'.$testimony->photo) }}" alt="{{ $testimony->subject }}" class="thumbnail" width="100%"/>
+                                                <img src="{{ asset('storage/uploads/testimonies/images/thumbnails/'.$testimonial->photo) }}" alt="{{ $testimonial->subject }}" class="img-thumbnail img-rounded img-fluid" width="50%"/>
                                             </td>
                                             <td>{{ $testimonial->name }}</td>
                                             <td>{{ $testimonial->subject }}</td>
-                                            <td> <input type="checkbox" value="{{ $testimony->allow_comments ? false : true }}" class="comment" data-url="{{ route('admin.testimony.comments.toggle') }}" data-id="{{$testimony->id}}"></td>
-                                            <td>{{ prettyDate($testimony->created_at) }}</td>
+                                            <td> {{--<input type="checkbox" id="comments{{$testimonial->id}}" name="comments{{$testimonial->id}}" value="{{ $testimonial->allow_comments ? 'checked ' : 'unchecked '}}" class="comment" --}}{{--data-url="{{ route('testimonial.comments.toggle') }}"--}}{{-- data-id="{{$testimonial->slug}}">
+                                                <label for="comments{{$testimonial->id}}" class="label-table form-check-label"></label>--}}
+                                                <input type="checkbox" class="custom-control-input" name="comments{{$testimonial->id}}" id="comments{{$testimonial->id}}" {{ $testimonial->allow_comments ? 'checked ' : 'unchecked '}}>
+                                                <label class="custom-control-label comments{{$testimonial->id}}" for="comments{{$testimonial->id}}"></label>
+                                            </td>
+                                            <td>{{ prettyDate($testimonial->published_at) }}</td>
                                             <td>
                                                 @if(Auth::guard('admin')->user()->can('read-admin-admin-testimonials-controller'))
-                                                    <a href="{{ route('$testimonial.show', $testimonial->id) }}" class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> view</a>
+                                                    <a target="_blank" href="{{ url('testimonial', $testimonial->slug) }}" class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> view</a>
+                                                @endif
+                                                @if(Auth::guard('admin')->user()->can('update-admin-admin-testimonials-controller'))
+                                                    <a href="{{ route('testimonials.edit', $testimonial->slug) }}" class="btn btn-primary btn-xs"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
                                                 @endif
                                                 @if(Auth::guard('admin')->user()->can('delete-admin-admin-testimonials-controller'))
-                                                    <button type="button" class="btn btn-danger btn-xs delete" data-url="{{ route('$testimonial.destroy', $testimonial->id) }}" data-id="{{ $testimonial->id }}"><i class="fa fa-trash-o"></i> Delete</button>
+                                                    <button type="button" class="btn btn-danger btn-xs delete" data-url="{{ route('testimonials.destroy', $testimonial->slug) }}" data-id="{{ $testimonial->slug }}"><i class="fa fa-trash-o"></i> Delete</button>
                                                 @endif
                                             </td>
                                         </tr>
@@ -126,10 +133,6 @@
                                     <span class="pull-left">
                                             <button style="margin-bottom: 10px" class="btn btn-danger delete_all" data-url="{{ url('/admin/testimonials/') }}">Delete Selected</button>
                                     </span>
-                                    {{--
-                                                                        <span class="pull-left ml-5">
-                                                                                <button style="margin-bottom: 10px" class="btn btn-pink excell_all" data-url="{{ url('/admin/contact/') }}">Export To Excell</button>
-                                                                        </span>--}}
                                 @endif
                             </div>
                         </div>
