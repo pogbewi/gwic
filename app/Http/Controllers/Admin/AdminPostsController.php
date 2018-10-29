@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Blog;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
@@ -122,7 +122,7 @@ class AdminPostsController extends AdminBaseController
             'featured' => isset($data['featured'])? 1 : 0,
             'allow_comments' => $request->input('allow_comments') ? 1 : 0
         ]);
-        dd($data);
+
         if($updated){
             $post->retag(strtolower($data['tag_names']));
             flash()->success('success', 'Post Updated');
@@ -136,7 +136,9 @@ class AdminPostsController extends AdminBaseController
                 File::delete(public_path('storage/uploads/posts/photos/thumbnails/'.$data['photo']));
             }
         }
-        return back();
+        $post->retag(strtolower($data['tag_names']));
+        flash()->success('success', 'Post Updated');
+        return redirect()->route('posts.index');
     }
 
     public function destroy(){

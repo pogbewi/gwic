@@ -24,7 +24,7 @@ class CreateBusinessInvestmentsTable extends Migration
             $table->text('address');
             $table->text('address_two')->nullable();
             $table->string('nationality');
-            $table->json('operation_countries');
+            $table->text('operation_countries');
             $table->string('city');
             $table->enum('gender', ['male','female']);
             $table->decimal('amount_needed', 19, 2 );

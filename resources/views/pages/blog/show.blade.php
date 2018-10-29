@@ -55,142 +55,12 @@
                         <!--Featured Image-->
                         <div class="card mb-4 wow fadeIn">
 
-                            <img src="http://mdbootstrap.com/img/Photos/Slides/img%20(144).jpg" class="img-fluid" alt="">
+                            <img src="{{ asset('storage/uploads/posts/photos/'.$post->photo) }}" class="img-fluid" title="{{ $post->title }}">
 
                         </div>
                         <!--/.Featured Image-->
 
-                        <!--Card-->
-                        <div class="card mb-4 wow fadeIn">
 
-                            <!--Card content-->
-                            <div class="card-body text-center">
-
-                                <p class="h5 my-4">What is MDB?</p>
-
-                                <p>MDB is world's most popular Material Design framework for building responsive, mobile-first
-                                    websites and apps.</p>
-
-                                <h5 class="my-4">
-                                    <strong>MDB - trusted by 400 000 + developers &amp; designers</strong>
-                                </h5>
-
-                                <!-- Logo carousel -->
-                                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="1800">
-                                    <div class="carousel-inner">
-                                        <!-- First slide -->
-                                        <div class="carousel-item">
-                                            <!--Grid row-->
-                                            <div class="row">
-
-                                                <!--First column-->
-                                                <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
-                                                    <img src="https://mdbootstrap.com/img/logo/brands/nike.png" class="img-fluid px-4" alt="Nike - logo" style="max-height: 40px">
-                                                </div>
-                                                <!--/First column-->
-
-                                                <!--Second column-->
-                                                <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
-                                                    <img src="https://mdbootstrap.com/img/logo/brands/amazon.png" class="img-fluid px-4" alt="Amazon - logo" style="max-height: 40px">
-                                                </div>
-                                                <!--/Second column-->
-
-                                                <!--Third column-->
-                                                <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
-                                                    <img src="https://mdbootstrap.com/img/logo/brands/sony.png" class="img-fluid px-4" alt="Sony - logo" style="max-height: 40px">
-                                                </div>
-                                                <!--/Third column-->
-
-                                                <!--Fourth column-->
-                                                <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
-                                                    <img src="https://mdbootstrap.com/img/logo/brands/samsung.png" class="img-fluid px-4" alt="Samsung - logo" style="max-height: 40px">
-                                                </div>
-                                                <!--/Fourth column-->
-
-                                            </div>
-                                            <!--/Grid row-->
-                                        </div>
-                                        <!-- First slide -->
-
-                                        <!-- Second slide -->
-                                        <div class="carousel-item active carousel-item-left">
-                                            <!--Grid row-->
-                                            <div class="row">
-
-                                                <!--First column-->
-                                                <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
-                                                    <img src="https://mdbootstrap.com/img/logo/brands/airbus.png" class="img-fluid px-4" alt="Airbus - logo" style="max-height: 40px">
-                                                </div>
-                                                <!--/First column-->
-
-                                                <!--Second column-->
-                                                <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
-                                                    <img src="https://mdbootstrap.com/img/logo/brands/yahoo.png" class="img-fluid px-4" alt="Yahoo - logo" style="max-height: 40px">
-                                                </div>
-                                                <!--/Second column-->
-
-                                                <!--Third column-->
-                                                <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
-                                                    <img src="https://mdbootstrap.com/img/logo/brands/deloitte.png" class="img-fluid px-4" alt="Deloitte - logo" style="max-height: 40px">
-                                                </div>
-                                                <!--/Third column-->
-
-                                                <!--Fourth column-->
-                                                <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
-                                                    <img src="https://mdbootstrap.com/img/logo/brands/ge.png" class="img-fluid px-4" alt="GE - logo" style="max-height: 40px">
-                                                </div>
-                                                <!--/Fourth column-->
-
-                                            </div>
-                                            <!--/Grid row-->
-                                        </div>
-                                        <!-- Second slide -->
-
-                                        <!-- Third slide -->
-                                        <div class="carousel-item carousel-item-next carousel-item-left">
-                                            <!--Grid row-->
-                                            <div class="row">
-
-                                                <!--First column-->
-                                                <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
-                                                    <img src="https://mdbootstrap.com/img/logo/brands/kpmg.png" class="img-fluid px-4" alt="KPMG - logo" style="max-height: 40px">
-                                                </div>
-                                                <!--/First column-->
-
-                                                <!--Second column-->
-                                                <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
-                                                    <img src="https://mdbootstrap.com/img/logo/brands/unity.png" class="img-fluid px-4" alt="Unity - logo" style="max-height: 40px">
-                                                </div>
-                                                <!--/Second column-->
-
-                                                <!--Third column-->
-                                                <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
-                                                    <img src="https://mdbootstrap.com/img/logo/brands/ikea.png" class="img-fluid px-4" alt="Ikea - logo" style="max-height: 40px">
-                                                </div>
-                                                <!--/Third column-->
-
-                                                <!--Fourth column-->
-                                                <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
-                                                    <img src="https://mdbootstrap.com/img/logo/brands/aegon.png" class="img-fluid px-4" alt="Aegon - logo" style="max-height: 40px">
-                                                </div>
-                                                <!--/Fourth column-->
-
-                                            </div>
-                                            <!--/Grid row-->
-                                        </div>
-                                        <!-- Third slide -->
-                                    </div>
-                                </div>
-                                <!-- Logo carousel -->
-
-                                <hr>
-
-                                <a class="btn btn-outline-primary" href="https://mdbootstrap.com/getting-started/" role="button" target="_blank">MDB free download<i class="fa fa-download ml-2"></i></a>
-
-                            </div>
-
-                        </div>
-                        <!--/.Card-->
 
                         <!--Card-->
                         <div class="card mb-4 wow fadeIn">
@@ -198,29 +68,15 @@
                             <!--Card content-->
                             <div class="card-body">
 
-                                <p class="h5 my-4">That's a very long heading </p>
+                                <h2 class="h2 my-4">{{ $post->title }} </h2>
 
+                                <p class="dark-grey-text float-right">
+                                    <strong>{{ \Carbon\Carbon::parse($post->published_at)->diffForHumans() }}</strong>
+                                </p>
 
-                                <blockquote class="blockquote">
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                    <footer class="blockquote-footer">Someone famous in
-                                        <cite title="Source Title">Source Title</cite>
-                                    </footer>
-                                </blockquote>
+                                <p class="h6 my-4">{{ $post->category->name }} </p>
 
-                                <p class="h5 my-4">That's a very long heading </p>
-
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae, ut rerum deserunt corporis
-                                    ducimus at, deleniti ea alias dolor reprehenderit sit vel. Incidunt id illum doloribus,
-                                    consequuntur maiores sed eligendi.</p>
-
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae, ut rerum deserunt corporis
-                                    ducimus at, deleniti ea alias dolor reprehenderit sit vel. Incidunt id illum doloribus,
-                                    consequuntur maiores sed eligendi.</p>
-
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae, ut rerum deserunt corporis
-                                    ducimus at, deleniti ea alias dolor reprehenderit sit vel. Incidunt id illum doloribus,
-                                    consequuntur maiores sed eligendi.</p>
+                               <p>{!! html_entity_decode($post->body) !!}....</p>
 
                             </div>
 
@@ -252,15 +108,12 @@
                             <div class="card-body">
 
                                 <div class="media d-block d-md-flex mt-3">
-                                    <img class="d-flex mb-3 mx-auto z-depth-1" src="https://mdbootstrap.com/img/Photos/Avatars/img (30).jpg" alt="Generic placeholder image"
+                                    <img class="d-flex mb-3 mx-auto z-depth-1" src="{{ $post->author->photo }}" alt="Generic placeholder image"
                                          style="width: 100px;">
                                     <div class="media-body text-center text-md-left ml-md-3 ml-0">
-                                        <h5 class="mt-0 font-weight-bold">Caroline Horwitz
+                                        <h5 class="mt-0 font-weight-bold">{{ $post->author->fullname }}
                                         </h5>
-                                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
-                                        quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
-                                        similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
-                                        fuga.
+
                                     </div>
                                 </div>
 
@@ -271,21 +124,24 @@
 
                         <!--Comments-->
                         <div class="card card-comments mb-3 wow fadeIn">
-                            <div class="card-header font-weight-bold">3 comments</div>
+                            <div class="card-header font-weight-bold">{{ count($comments) }} comments</div>
                             <div class="card-body">
-
+                                @if(count($comments) == 0)
+                                    <p> No Comment Available at this time. </p>
+                                @else
+                            @foreach($comments as $comment)
+                                @if($comment->approved)
                                 <div class="media d-block d-md-flex mt-4">
                                     <img class="d-flex mb-3 mx-auto " src="https://mdbootstrap.com/img/Photos/Avatars/img (20).jpg" alt="Generic placeholder image">
                                     <div class="media-body text-center text-md-left ml-md-3 ml-0">
-                                        <h5 class="mt-0 font-weight-bold">Miley Steward
+                                        <h5 class="mt-0 font-weight-bold">{{ $comment->name }}
                                             <a href="" class="pull-right">
                                                 <i class="fa fa-reply"></i>
                                             </a>
                                         </h5>
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        {{ $comment->body }}
 
-                                        <div class="media d-block d-md-flex mt-3">
+                                      {{--  <div class="media d-block d-md-flex mt-3">
                                             <img class="d-flex mb-3 mx-auto " src="https://mdbootstrap.com/img/Photos/Avatars/img (27).jpg" alt="Generic placeholder image">
                                             <div class="media-body text-center text-md-left ml-md-3 ml-0">
                                                 <h5 class="mt-0 font-weight-bold">Tommy Smith
@@ -297,9 +153,9 @@
                                                 ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
                                                 sunt explicabo.
                                             </div>
-                                        </div>
+                                        </div>--}}
 
-                                        <!-- Quick Reply -->
+                           {{--             <!-- Quick Reply -->
                                         <div class="form-group mt-4">
                                             <label for="quickReplyFormComment">Your comment</label>
                                             <textarea class="form-control" id="quickReplyFormComment" rows="5"></textarea>
@@ -321,57 +177,72 @@
                                                 Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
                                                 tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
                                             </div>
-                                        </div>
+                                        </div>--}}
                                     </div>
                                 </div>
-                                <div class="media d-block d-md-flex mt-3">
-                                    <img class="d-flex mb-3 mx-auto " src="https://mdbootstrap.com/img/Photos/Avatars/img (30).jpg" alt="Generic placeholder image">
-                                    <div class="media-body text-center text-md-left ml-md-3 ml-0">
-                                        <h5 class="mt-0 font-weight-bold">Caroline Horwitz
-                                            <a href="" class="pull-right">
-                                                <i class="fa fa-reply"></i>
-                                            </a>
-                                        </h5>
-                                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
-                                        quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
-                                        similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
-                                        fuga.
-                                    </div>
-                                </div>
+                                @endif
+                            @endforeach
+                        @endif
 
                             </div>
                         </div>
                         <!--/.Comments-->
-
+                        @if($model->allow_comments)
                         <!--Reply-->
                         <div class="card mb-3 wow fadeIn">
                             <div class="card-header font-weight-bold">Leave a reply</div>
                             <div class="card-body">
+                                @if ($message = Session::get('success'))
+                                    <div class="alert alert-success alert-block">
+                                        <button type="button" class="close" data-dismiss="alert"><span class="fa fa-times"></span> </button>
+                                        <strong>{{ $message }}</strong>
 
-                                <!-- Default form reply -->
-                                <form>
+                                    </div>
+
+                            @endif
+                            {!! Form::open(['route'=>'comments.posts.store', 'role' => 'form']) !!}
 
                                     <!-- Comment -->
-                                    <div class="form-group">
-                                        <label for="replyFormComment">Your comment</label>
-                                        <textarea class="form-control" id="replyFormComment" rows="5"></textarea>
+                                    <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
+                                        <label for="body">Your comment</label>
+                                        <input type="hidden" name="slug" id="slug" value="{{ $model->slug }}" class="form-control">
+                                        <textarea class="form-control" name="body" id="body" rows="5">{{ old('body') }}</textarea>
+                                        @if ($errors->has('body'))
+                                            <span class="help-block">
+                                            <strong class="text-danger">{{ $errors->first('body') }}</strong>
+                                        </span>
+                                        @endif
                                     </div>
 
                                     <!-- Name -->
-                                    <label for="replyFormName">Your name</label>
-                                    <input type="email" id="replyFormName" class="form-control">
+                                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                    <label for="name">Your name</label>
+                                    <input type="text" id="name" name="name" class="form-control">
+                                        @if ($errors->has('name'))
+                                            <span class="help-block">
+                                                <strong class="text-danger">{{ $errors->first('name') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
 
                                     <br>
 
                                     <!-- Email -->
-                                    <label for="replyFormEmail">Your e-mail</label>
-                                    <input type="email" id="replyFormEmail" class="form-control">
+                                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                    <label for="email">Your e-mail</label>
+                                    <input type="email" name="email" id="email" value="{{ old('email') }}" class="form-control">
+                                        @if ($errors->has('email'))
+                                            <span class="help-block">
+                                                <strong class="text-danger">{{ $errors->first('email') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
 
 
                                     <div class="text-center mt-4">
-                                        <button class="btn btn-info btn-md" type="submit">Post</button>
+                                        <button class="btn btn-info btn-md wpcf7-submit photo-submit" name="submit" type="submit">Post</button>
                                     </div>
-                                </form>
+                                {!! Form::close() !!}
                                 <!-- Default form reply -->
 
 
@@ -379,37 +250,13 @@
                             </div>
                         </div>
                         <!--/.Reply-->
+                        @endif
 
                     </div>
                     <!--Grid column-->
 
                     <!--Grid column-->
                     <div class="col-md-4 mb-4">
-
-                        <!--Card: Jumbotron-->
-                        <div class="card blue-gradient mb-4 wow fadeIn">
-
-                            <!-- Content -->
-                            <div class="card-body text-white text-center">
-
-                                <h4 class="mb-4">
-                                    <strong>Learn Bootstrap 4 with MDB</strong>
-                                </h4>
-                                <p>
-                                    <strong>Best & free guide of responsive web design</strong>
-                                </p>
-                                <p class="mb-4">
-                                    <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video
-                                        and written versions available. Create your own, stunning website.</strong>
-                                </p>
-                                <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-outline-white btn-md">Start free tutorial
-                                    <i class="fa fa-graduation-cap ml-2"></i>
-                                </a>
-
-                            </div>
-                            <!-- Content -->
-                        </div>
-                        <!--Card: Jumbotron-->
 
                         <!--Card : Dynamic content wrapper-->
                         <div class="card mb-4 text-center wow fadeIn">
@@ -420,23 +267,23 @@
                             <div class="card-body">
 
                                 <!-- Default form login -->
-                                <form>
+                            {!! Form::open(['route' => 'subscriber.store', 'method' => 'POST',"class"=>"text-center","style"=>"color: rgb(255,255,255);" ]) !!}
 
-                                    <!-- Default input email -->
-                                    <label for="defaultFormEmailEx" class="grey-text">Your email</label>
-                                    <input type="email" id="defaultFormLoginEmailEx" class="form-control">
+                            <!-- Default input email -->
+                                <label for="sub_email" class="grey-text">Your email</label>
+                                <input type="email" name="sub_email" id="sub_email" class="form-control">
 
-                                    <br>
+                                <br>
 
-                                    <!-- Default input password -->
-                                    <label for="defaultFormNameEx" class="grey-text">Your name</label>
-                                    <input type="text" id="defaultFormNameEx" class="form-control">
+                                <!-- Default input password -->
+                                <label for="name" class="grey-text">Your name</label>
+                                <input type="text" name="name" id="name" class="form-control">
 
-                                    <div class="text-center mt-4">
-                                        <button class="btn btn-info btn-md" type="submit">Sign up</button>
-                                    </div>
-                                </form>
-                                <!-- Default form login -->
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-info btn-md" type="submit" data-url="{{ url('subscribe/store') }}" id="subscriber">Sign up</button>
+                                </div>
+                            {!! Form::close() !!}
+                            <!-- Default form login -->
 
                             </div>
 
@@ -452,33 +299,17 @@
                             <div class="card-body">
 
                                 <ul class="list-unstyled">
+                                    @foreach($popular as $viral)
                                     <li class="media">
-                                        <img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder7.jpg" alt="Generic placeholder image">
+                                        <img class="d-flex mr-3" src="{{ asset('storage/uploads/posts/photos/thumbnails/'.$viral->photo) }}">
                                         <div class="media-body">
                                             <a href="">
-                                                <h5 class="mt-0 mb-1 font-weight-bold">List-based media object</h5>
+                                                <h5 class="mt-0 mb-1 font-weight-bold">{{ $viral->title }}</h5>
                                             </a>
-                                            Cras sit amet nibh libero, in gravida nulla (...)
+                                            {!! html_entity_decode(str_limit($post->meta_description, 200, "...")) !!}....
                                         </div>
                                     </li>
-                                    <li class="media my-4">
-                                        <img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder6.jpg" alt="An image">
-                                        <div class="media-body">
-                                            <a href="">
-                                                <h5 class="mt-0 mb-1 font-weight-bold">List-based media object</h5>
-                                            </a>
-                                            Cras sit amet nibh libero, in gravida nulla (...)
-                                        </div>
-                                    </li>
-                                    <li class="media">
-                                        <img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder5.jpg" alt="Generic placeholder image">
-                                        <div class="media-body">
-                                            <a href="">
-                                                <h5 class="mt-0 mb-1 font-weight-bold">List-based media object</h5>
-                                            </a>
-                                            Cras sit amet nibh libero, in gravida nulla (...)
-                                        </div>
-                                    </li>
+                                        @endforeach
                                 </ul>
 
                             </div>

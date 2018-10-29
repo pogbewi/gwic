@@ -70,251 +70,81 @@
 
                 <!--Grid row-->
                 <div class="row">
+                    @foreach($posts->chunk(2) as $count =>$item)
+                            <!--Grid column-->
+                         <div class="col-lg-6 col-md-12">
+                                @foreach($item as $post)
+                                   @if($post->featured)
+                                     @if ($loop->first)
+                                         <!--Image-->
+                                             <div class="view overlay rounded z-depth-1-half mb-3">
+                                                 <img src="{{ asset('storage/uploads/posts/photos/'.$post->photo) }}" class="img-fluid" title="{{ $post->title }}">
+                                                 <a>
+                                                     <div class="mask rgba-white-slight"></div>
+                                                 </a>
+                                             </div>
+                                             <!--Excerpt-->
+                                             <div class="news-data">
+                                                 <a href="" class="light-blue-text">
+                                                     <h6>
+                                                         <i class="fa fa-plane"></i>
+                                                         <strong> {{ $post->category->name }}</strong>
+                                                     </h6>
+                                                 </a>
+                                                 <p>
+                                                     <strong>
+                                                         <i class="fa fa-clock-o"></i> {{ \Carbon\Carbon::parse($post->published_at)->diffForHumans() }}</strong>
+                                                 </p>
+                                             </div>
+                                             <h3>
+                                                 <a href="{{ route('post.show', $post->slug) }}">
+                                                     <strong>{{ $post->title }}</strong>
+                                                 </a>
+                                             </h3>
+                                             <p> {!! html_entity_decode(str_limit($post->body, 200, "...")) !!}....
+                                             </p>
 
-                    <!--Grid column-->
-                    <div class="col-lg-6 col-md-12">
+                                             <!--/Featured news-->
 
+                                             <hr>
+                                     @endif
+                                    @endif
+                                    @endforeach
+                                @foreach($item as $post)
+                                  @if (!$post->featured)
+                                      <!--Small news-->
+                                          <div class="row">
+                                              <div class="col-md-3">
 
-                        <!--Image-->
-                        <div class="view overlay rounded z-depth-1-half mb-3">
-                            <img src="https://mdbootstrap.com/img/Photos/Others/images/77.jpg" class="img-fluid" alt="Sample post image">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
+                                                  <!--Image-->
+                                                  <div class="view overlay rounded z-depth-1">
+                                                      <img src="{{ asset('storage/uploads/posts/photos/thumbnails/'.$post->photo) }}" alt="{{ $post->title }}" class="img-fluid">
+                                                      <a>
+                                                          <div class="mask rgba-white-slight"></div>
+                                                      </a>
+                                                  </div>
+                                              </div>
 
-                        <!--Excerpt-->
-                        <div class="news-data">
-                            <a href="" class="light-blue-text">
-                                <h6>
-                                    <i class="fa fa-plane"></i>
-                                    <strong> Travels</strong>
-                                </h6>
-                            </a>
-                            <p>
-                                <strong>
-                                    <i class="fa fa-clock-o"></i> 20/08/2018</strong>
-                            </p>
-                        </div>
-                        <h3>
-                            <a>
-                                <strong>This is title of the news</strong>
-                            </a>
-                        </h3>
-                        <p> Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-                            placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
-                        </p>
+                                              <!--Excerpt-->
+                                              <div class="col-md-9">
+                                                  <p class="dark-grey-text">
+                                                      <strong>{{ \Carbon\Carbon::parse($post->published_at)->diffForHumans() }}</strong>
+                                                  </p>
+                                                  <a href="{{ route('post.show', $post->slug) }}">{{ $post->title }}
+                                                      <i class="fa fa-angle-right float-right"></i>
+                                                  </a>
+                                              </div>
 
-                        <!--/Featured news-->
+                                          </div>
+                                          <!--/Small news-->
+                                          <hr>
+                                  @endif
 
-                        <hr>
+                                @endforeach
+                          </div>
+                                <!--Grid column-->
+                    @endforeach
 
-                        <!--Small news-->
-                        <div class="row">
-                            <div class="col-md-3">
-
-                                <!--Image-->
-                                <div class="view overlay rounded z-depth-1">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/photo8.jpg" class="img-fluid" alt="Minor sample post image">
-                                    <a>
-                                        <div class="mask rgba-white-slight"></div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!--Excerpt-->
-                            <div class="col-md-9">
-                                <p class="dark-grey-text">
-                                    <strong>19/08/2018</strong>
-                                </p>
-                                <a>Lorem ipsum dolor sit amet
-                                    <i class="fa fa-angle-right float-right"></i>
-                                </a>
-                            </div>
-
-                        </div>
-                        <!--/Small news-->
-
-                        <hr>
-
-                        <!--Small news-->
-                        <div class="row">
-                            <div class="col-md-3">
-
-                                <!--Image-->
-                                <div class="view overlay rounded z-depth-1">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/images/54.jpg" class="img-fluid" alt="Minor sample post image">
-                                    <a>
-                                        <div class="mask rgba-white-slight"></div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!--Excerpt-->
-                            <div class="col-md-9">
-                                <p class="dark-grey-text">
-                                    <strong>18/08/2018</strong>
-                                </p>
-                                <a>Soluta nobis est eligendi
-                                    <i class="fa fa-angle-right float-right"></i>
-                                </a>
-                            </div>
-
-                        </div>
-                        <!--/Small news-->
-
-                        <hr>
-
-                        <!--Small news-->
-                        <div class="row">
-                            <div class="col-md-3">
-
-                                <!--Image-->
-                                <div class="view overlay rounded z-depth-1">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/images/49.jpg" class="img-fluid" alt="Minor sample post image">
-                                    <a>
-                                        <div class="mask rgba-white-slight"></div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!--Excerpt-->
-                            <div class="col-md-9">
-                                <p class="dark-grey-text">
-                                    <strong>17/08/2018</strong>
-                                </p>
-                                <a>Voluptatem accusantium doloremque
-                                    <i class="fa fa-angle-right float-right"></i>
-                                </a>
-                            </div>
-
-                        </div>
-                        <!--/Small news-->
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-6 col-md-12">
-
-                        <!--Image-->
-                        <div class="view overlay rounded z-depth-1-half mb-3">
-                            <img src="https://mdbootstrap.com/img/Photos/Others/images/32.jpg" class="img-fluid" alt="Sample post image">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-
-                        <!--Excerpt-->
-                        <div class="news-data">
-                            <a href="" class="light-blue-text">
-                                <h6>
-                                    <i class="fa fa-plane"></i>
-                                    <strong> Travels</strong>
-                                </h6>
-                            </a>
-                            <p>
-                                <strong>
-                                    <i class="fa fa-clock-o"></i> 20/08/2018</strong>
-                            </p>
-                        </div>
-                        <h3>
-                            <a>
-                                <strong>This is title of the news</strong>
-                            </a>
-                        </h3>
-                        <p> Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-                            placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
-                        </p>
-
-                        <!--/Featured news-->
-
-                        <hr>
-
-                        <!--Small news-->
-                        <div class="row">
-                            <div class="col-md-3">
-
-                                <!--Image-->
-                                <div class="view overlay rounded z-depth-1">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/photo11.jpg" class="img-fluid" alt="Minor sample post image">
-                                    <a>
-                                        <div class="mask rgba-white-slight"></div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!--Excerpt-->
-                            <div class="col-md-9">
-                                <p class="dark-grey-text">
-                                    <strong>19/08/2018</strong>
-                                </p>
-                                <a>Lorem ipsum dolor sit amet
-                                    <i class="fa fa-angle-right float-right"></i>
-                                </a>
-                            </div>
-
-                        </div>
-                        <!--/Small news-->
-
-                        <hr>
-
-                        <!--Small news-->
-                        <div class="row">
-                            <div class="col-md-3">
-
-                                <!--Image-->
-                                <div class="view overlay rounded z-depth-1">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/images/51.jpg" class="img-fluid" alt="Minor sample post image">
-                                    <a>
-                                        <div class="mask rgba-white-slight"></div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!--Excerpt-->
-                            <div class="col-md-9">
-                                <p class="dark-grey-text">
-                                    <strong>18/08/2018</strong>
-                                </p>
-                                <a>Soluta nobis est eligendi
-                                    <i class="fa fa-angle-right float-right"></i>
-                                </a>
-                            </div>
-
-                        </div>
-                        <!--/Small news-->
-
-                        <hr>
-
-                        <!--Small news-->
-                        <div class="row">
-                            <div class="col-md-3">
-
-                                <!--Image-->
-                                <div class="view overlay rounded z-depth-1">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/images/44.jpg" class="img-fluid" alt="Minor sample post image">
-                                    <a>
-                                        <div class="mask rgba-white-slight"></div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!--Excerpt-->
-                            <div class="col-md-9">
-                                <p class="dark-grey-text">
-                                    <strong>17/08/2018</strong>
-                                </p>
-                                <a>Voluptatem accusantium doloremque
-                                    <i class="fa fa-angle-right float-right"></i>
-                                </a>
-                            </div>
-
-                        </div>
-                        <!--/Small news-->
-
-                    </div>
-                    <!--Grid column-->
                 </div>
             </section>
         </div>

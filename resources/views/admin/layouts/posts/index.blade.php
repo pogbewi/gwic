@@ -97,7 +97,7 @@
                                             <td>{{ prettyDate($post->published_at) }}</td>
                                             <td>
                                                 @if(Auth::guard('admin')->user()->can('read-admin-admin-posts-controller'))
-                                                    <a href="{{ route('posts.show', $post->id) }}" class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> view</a>
+                                                    <a target="_blank" href="{{ route('post.show', $post->slug) }}" class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> view</a>
                                                 @endif
                                                 @if(Auth::guard('admin')->user()->can('update-admin-admin-posts-controller'))
                                                     <a href="{{ route('posts.edit', $post->slug) }}" class="btn btn-primary btn-xs"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>

@@ -6,13 +6,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Subscriber;
 use App\Models\Testimonial;
+use App\Models\Blog;
+use Carbon\Carbon;
 class HomeController extends Controller
 {
 
     public function index()
     {
         $testimonials = Testimonial::orderBy('created_at', 'desc')->get();
-        return view('index',compact('testimonials'));
+        $posts = Blog::where('published_at','<', Carbon::now())->orWhere('published_at', Carbon::now())->latest()->take(3)->get();
+        return view('index',compact('testimonials', 'posts'));
     }
 
     public function about()

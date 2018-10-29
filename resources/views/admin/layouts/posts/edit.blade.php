@@ -154,7 +154,7 @@
                             </div>
 
                             <div class="custom-control custom-checkbox">
-                                {{ Form::checkbox('featured', old('featured'), ['id'=>'featured', 'class'=>"custom-control-input"]) }}
+                                <input type="checkbox" class="custom-control-input" name="featured" id="featured" {{ $post->allow_comments ? 'checked ' : 'unchecked '}}>
                                 <label class="custom-control-label" for="featured">Feature Post ?</label>
                             </div>
                         </div>

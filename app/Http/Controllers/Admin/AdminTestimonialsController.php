@@ -107,7 +107,7 @@ class AdminTestimonialsController extends AdminBaseController
             $this->removePhoto($testimony);
         }
         $updated= $testimony->update([
-            'from' => str::title($data['subject']),
+            'from' => str::title($data['from']),
             'name' => str::title($data['name']),
             'body' => $data['body'],
             'meta_description' => $data['meta_description'],

@@ -29,6 +29,7 @@ Route::middleware(['throttle'])->group( function () {
     Route::get('/testimonial', '\App\Http\Controllers\TestimonyController@index')->name('testimonial');
     Route::get('/testimonial/{id}', '\App\Http\Controllers\TestimonyController@show')->name('testimonial.show');
 
+    Route::post('/posts/comments', '\App\Http\Controllers\PostController@comment')->name('comments.posts.store');
     Route::get('/post', '\App\Http\Controllers\PostController@index')->name('post');
     Route::get('/post/{id}', '\App\Http\Controllers\PostController@show')->name('post.show');
 
