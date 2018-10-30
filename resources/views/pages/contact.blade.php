@@ -186,7 +186,7 @@
     </script>
 
     <!--Google Maps-->
-    <script src="https://maps.google.com/maps/api/js"></script>
+    <script src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap"></script>
     <!-- Carousel options -->
     <script>
         $('.carousel').carousel({

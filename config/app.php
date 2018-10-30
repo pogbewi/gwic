@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Global Wealth Investment Company'),
 
     /*
     |--------------------------------------------------------------------------
@@ -164,6 +164,7 @@ return [
          * Package Service Providers...
          */
         Zizaco\Entrust\EntrustServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
 
         /*
@@ -224,6 +225,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 

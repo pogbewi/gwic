@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\InvestorForm;
 use App\Http\Requests\InvestorRequests;
+use App\Jobs\InvestorJob;
 use App\Models\Investor;
 use Illuminate\Http\Request;
-
+use PDF;
 class InvestorController extends Controller
 {
     /**
@@ -45,10 +47,21 @@ class InvestorController extends Controller
 
     public function store(InvestorRequests $investorRequests)
     {
-        $data = $investorRequests->validate();
+        $data = $investorRequests->validate([
+            'title' => 'required',
+            'firstname' => 'required ',
+            'lastname' => 'required ',
+            'phone' => 'required ',
+            'email' => 'required|email',
+            'nationality' => 'required ',
+            'gender' => 'required',
+            'amount' => 'required|regex:/^\d*(\.\d{1,2})?$/',
+            'viewed' => 'nullable'
+        ]);
         //dd($request);
         $result = Investor::create($data);
         if($result->id != ''){
+            InvestorJob::dispatch($result);
             return response(['success'=>'Your Investment Request form has been sent!.Thank you, We\'ll respond as soon as possible']);
         }
         return back();

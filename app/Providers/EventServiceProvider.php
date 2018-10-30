@@ -17,13 +17,13 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
-            'App\Events\InvestmentRequestForm' => [
-                'App\Listeners\InvestmentRequestFormListener',
-            ],
+        ],
+        'App\Events\InvestmentRequestForm' => [
+            'App\Listeners\InvestmentRequestFormListener',
+        ],
 
-            'App\Events\InvestorForm' => [
-                'App\Listeners\InvestorFormListener',
-            ],
+        'App\Events\InvestorForm' => [
+            'App\Listeners\InvestorFormListener',
         ],
     ];
 

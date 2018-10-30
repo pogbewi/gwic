@@ -513,7 +513,9 @@
 
 @push('scripts')
     <!--Google Maps-->
-    <script src="https://maps.google.com/maps/api/js"></script>
+    <script src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap"></script>
+  {{--  <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap"
+            type="text/javascript"></script>--}}
     <!-- Carousel options -->
     <script>
         $('.carousel').carousel({

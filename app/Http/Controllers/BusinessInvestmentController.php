@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\InvestmentRequestForm;
 use App\Http\Requests\BusinessOwnerRequests;
+use App\Jobs\InvestmentRequestJob;
 use App\Models\BusinessInvestment;
+use PDF;
 use Illuminate\Http\Request;
 use PragmaRX\Countries\Package\Countries;
 class BusinessInvestmentController extends Controller
@@ -50,7 +53,23 @@ class BusinessInvestmentController extends Controller
      */
 
     public function validateInvestmentForm(BusinessOwnerRequests $businessOwnerRequests){
-        $data = $businessOwnerRequests->validate();
+        $data = $businessOwnerRequests->validate([
+            'title' => 'required',
+            'firstname' => 'required ',
+            'lastname' => 'required ',
+            'phone' => 'required ',
+            'businessname' => 'required',
+            'email' => 'required|email',
+            'address' => 'required',
+            'address_two' => 'nullable',
+            'nationality' => 'required ',
+            'operation_countries' => 'required',
+            'city' => 'required ',
+            'gender' => 'required',
+            'amount_needed' => 'required|regex:/^\d*(\.\d{1,2})?$/',
+            'status' => 'required',
+            'viewed' => 'nullable'
+        ]);
         if(!empty($businessOwnerRequests->session()->get('investment'))){
             $businessOwnerRequests->session()->remove('investment');
         }
@@ -86,6 +105,10 @@ class BusinessInvestmentController extends Controller
                     'status' => $data['status'],
                     'agreed' => $businessOwnerRequests->input('agreed') ? 1 : 0
                 ]);
+                if ($result->id != ''){
+                    InvestmentRequestJob::dispatch($result);
+                }
+
                 if($result->id != ''){
                     return response(['success'=>'Your Investment Request form has been sent!.Thank you, We\'ll respond as soon as possible']);
                 }
@@ -98,7 +121,7 @@ class BusinessInvestmentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\BusinessInvestment  $businessInvestment
+     * @param  \App\Models\BusinessInvestment  $businessInvestment
      * @return \Illuminate\Http\Response
      */
     public function show(BusinessInvestment $businessInvestment)
@@ -109,7 +132,7 @@ class BusinessInvestmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\BusinessInvestment  $businessInvestment
+     * @param  \App\Models\BusinessInvestment  $businessInvestment
      * @return \Illuminate\Http\Response
      */
     public function edit(BusinessInvestment $businessInvestment)
@@ -121,7 +144,7 @@ class BusinessInvestmentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\BusinessInvestment  $businessInvestment
+     * @param  \App\Models\BusinessInvestment  $businessInvestment
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, BusinessInvestment $businessInvestment)
@@ -132,11 +155,12 @@ class BusinessInvestmentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\BusinessInvestment  $businessInvestment
+     * @param  \App\Models\BusinessInvestment  $businessInvestment
      * @return \Illuminate\Http\Response
      */
     public function destroy(BusinessInvestment $businessInvestment)
     {
         //
     }
+
 }

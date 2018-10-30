@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Events\InvestmentRequestForm;
 class BusinessInvestment extends Model
 {
     use Notifiable;
@@ -20,4 +21,12 @@ class BusinessInvestment extends Model
     {
         return $this->firstname.' '. $this->lastname;
     }
+
+/*    public static function boot() {
+        parent::boot();
+
+        static::created(function (BusinessInvestment $model) {
+            //event(new InvestmentRequestForm($model));
+        });
+    }*/
 }

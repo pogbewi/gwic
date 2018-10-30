@@ -24,15 +24,7 @@ class InvestorRequests extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'firstname' => 'required ',
-            'lastname' => 'required ',
-            'phone' => 'required ',
-            'email' => 'required|email',
-            'nationality' => 'required ',
-            'gender' => 'required',
-            'amount' => 'required',
-            'viewed' => 'nullable'
+
         ];
     }
 

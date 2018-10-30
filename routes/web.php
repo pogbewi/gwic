@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('/mailable', function () {
+    $request = \App\Models\BusinessInvestment::find(1);
+    $pdf = PDF::loadView('admin.email.business-request', compact('request'));
+    return (new \App\Mail\InvestmentRequestMail($request, $pdf))->render();
+});
 
 /*
 |--------------------------------------------------------------------------

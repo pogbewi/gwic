@@ -24,21 +24,7 @@ class BusinessOwnerRequests extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'firstname' => 'required ',
-            'lastname' => 'required ',
-            'phone' => 'required ',
-            'businessname' => 'required',
-            'email' => 'required|email',
-            'address' => 'required',
-            'address_two' => 'nullable',
-            'nationality' => 'required ',
-            'operation_countries' => 'required',
-            'city' => 'required ',
-            'gender' => 'required',
-            'amount_needed' => 'required',
-            'status' => 'required',
-            'viewed' => 'nullable'
+
         ];
     }
 

@@ -8,7 +8,7 @@
 
 namespace App\Http;
 
-
+use App\Models\Setting;
 class SettingsHelper
 {
     public function settings($key, $default){
